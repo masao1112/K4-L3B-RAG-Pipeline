@@ -1,0 +1,786 @@
+{
+  "run": {
+    "date": "2026-09-25",
+    "framework": "custom-tfidf-evaluator-v1",
+    "ragas_installed": "0.4.3",
+    "generator_model": "gemini-3.5-flash-lite",
+    "embedding_model": "BAAI/bge-m3",
+    "corpus_commit": "33de451",
+    "golden_size": 17,
+    "top_k": 5,
+    "rrf_k": 60,
+    "relevance_threshold": 0.2
+  },
+  "overall": {
+    "dense_only": {
+      "faithfulness": 0.2841,
+      "answer_relevance": 0.3822,
+      "context_recall": 0.5007,
+      "context_precision": 0.5281,
+      "average": 0.4238,
+      "mean_latency_seconds": 2.876,
+      "mean_retrieval_latency_seconds": 2.2037,
+      "provider_errors": 0
+    },
+    "hybrid_rrf": {
+      "faithfulness": 0.348,
+      "answer_relevance": 0.3878,
+      "context_recall": 0.5056,
+      "context_precision": 0.5343,
+      "average": 0.4439,
+      "mean_latency_seconds": 2.879,
+      "mean_retrieval_latency_seconds": 2.2109,
+      "provider_errors": 0
+    }
+  },
+  "cases": [
+    {
+      "case_index": 0,
+      "config": "dense_only",
+      "question": "Học phí niêm yết chương trình cử nhân tại VinUni có được hỗ trợ gì từ nhà sáng lập không?",
+      "answer": "Học phí niêm yết chưa bao gồm khoản hỗ trợ 35% học phí do Tập đoàn Vingroup – Nhà sáng lập VinUni tài trợ [Document 1]. Khoản hỗ trợ 35% này được tự động áp dụng cho tất cả sinh viên trúng tuyển (gồm cả sinh viên Việt Nam và quốc tế) và được duy trì trong suốt toàn bộ thời gian học tập tại trường [Document 1].",
+      "source_ids": [
+        "news/article_01.md::chunk-2",
+        "news/article_01.md::chunk-1",
+        "news/article_02.md::chunk-0",
+        "news/article_01.md::chunk-0",
+        "news/article_01.md::chunk-4"
+      ],
+      "latency_seconds": 6.207,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.5224,
+        "answer_relevance": 0.3979,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 29.7083
+    },
+    {
+      "case_index": 0,
+      "config": "hybrid_rrf",
+      "question": "Học phí niêm yết chương trình cử nhân tại VinUni có được hỗ trợ gì từ nhà sáng lập không?",
+      "answer": "Học phí niêm yết chương trình cử nhân tại VinUni chưa bao gồm khoản hỗ trợ 35% học phí do Tập đoàn Vingroup – Nhà sáng lập VinUni tài trợ [Document 1]. Khoản hỗ trợ 35% này được tự động áp dụng cho tất cả sinh viên trúng tuyển (gồm cả sinh viên Việt Nam và quốc tế) và được duy trì trong suốt toàn bộ thời gian học tập tại trường [Document 1].",
+      "source_ids": [
+        "news/article_01.md::chunk-2",
+        "news/article_01.md::chunk-1",
+        "news/article_01.md::chunk-0",
+        "news/article_02.md::chunk-0",
+        "news/article_01.md::chunk-4"
+      ],
+      "latency_seconds": 6.709,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.5038,
+        "answer_relevance": 0.454,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 29.7164
+    },
+    {
+      "case_index": 1,
+      "config": "dense_only",
+      "question": "Học phí niêm yết theo tín chỉ tại VinUni được áp dụng trong những trường hợp nào?",
+      "answer": "Học phí niêm yết theo tín chỉ tại VinUni được áp dụng trong các trường hợp sau:\n- Học bổ sung tín chỉ khi học cùng lúc hai chương trình (double degree) tại VinUni [Document 1].\n- Học bổ sung tín chỉ vượt quá khung chương trình đào tạo chuẩn đã công bố tại thời điểm nhập học (1 chuyên ngành chính + tối đa 1 chuyên ngành phụ), ví dụ: khi học cùng lúc hai chuyên ngành (double concentrations) hoặc hai chuyên ngành phụ (double minors) [Document 1].\n- Học bổ sung tín chỉ khi học chương trình tích hợp trao đổi tại các trường đối tác của VinUni [Document 2].\n- Học chương trình trao đổi ngắn hạn theo phạm vi hợp tác với trường đối tác hoặc theo các chương trình khác cần thực hiện tính phí theo tín chỉ [Document 2].\n- Học lại môn trong các trường hợp: không đạt điểm yêu cầu, không đủ điều kiện dự thi do vắng mặt hoặc vi phạm quy chế, hoặc đăng ký học lại để cải thiện điểm [Document 2].\n- Chuyển tiếp từ một trường đại học khác được công nhận các học phần tương đương [Document 2].",
+      "source_ids": [
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-2",
+        "news/article_01.md::chunk-5",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "legal/vinuni-policy-thac-sy.md::chunk-1"
+      ],
+      "latency_seconds": 6.75,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.5001,
+        "answer_relevance": 0.3268,
+        "context_recall": 1.0,
+        "context_precision": 0.8056
+      },
+      "retrieval_latency_seconds": 0.4184
+    },
+    {
+      "case_index": 1,
+      "config": "hybrid_rrf",
+      "question": "Học phí niêm yết theo tín chỉ tại VinUni được áp dụng trong những trường hợp nào?",
+      "answer": "Học phí niêm yết theo tín chỉ tại VinUni được áp dụng trong các trường hợp sau:\n\n- Học bổ sung tín chỉ khi học cùng lúc hai chương trình (double degree) tại VinUni [Document 1].\n- Học bổ sung tín chỉ vượt quá khung chương trình đào tạo chuẩn đã công bố tại thời điểm nhập học (1 chuyên ngành chính + tối đa 1 chuyên ngành phụ), ví dụ: khi học cùng lúc hai chuyên ngành (double concentrations) hoặc hai chuyên ngành phụ (double minors) [Document 1].\n- Học bổ sung tín chỉ khi học chương trình tích hợp trao đổi tại các trường đối tác của VinUni [Document 2].\n- Học chương trình trao đổi ngắn hạn theo phạm vi hợp tác với trường đối tác hoặc theo các chương trình khác cần thực hiện tính phí theo tín chỉ [Document 2].\n- Học lại môn trong các trường hợp: không đạt điểm yêu cầu, không đủ điều kiện dự thi do vắng mặt hoặc vi phạm quy chế, hoặc đăng ký học lại để cải thiện điểm [Document 2].\n- Chuyển tiếp từ một trường đại học khác được công nhận các học phần tương đương [Document 2].",
+      "source_ids": [
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-2",
+        "news/article_01.md::chunk-5",
+        "legal/vinuni-policy-tien-si.md::chunk-0",
+        "legal/vinuni-policy-tien-si.md::chunk-1"
+      ],
+      "latency_seconds": 6.72,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.5009,
+        "answer_relevance": 0.3291,
+        "context_recall": 1.0,
+        "context_precision": 0.8333
+      },
+      "retrieval_latency_seconds": 0.4225
+    },
+    {
+      "case_index": 2,
+      "config": "dense_only",
+      "question": "Học phí toàn chương trình Thạc sĩ Quản trị Kinh doanh (MBA) tại VinUni là bao nhiêu và thời gian đào tạo kéo dài bao lâu?",
+      "answer": "Dựa trên các tài liệu được cung cấp:\n\n- **Học phí toàn chương trình Thạc sĩ Quản trị Kinh doanh (MBA):** 1.398.600.000 VNĐ (Phí USD tham khảo: 60.000 USD) cho thời gian đào tạo 18 tháng, cộng thêm chi phí Immersion Program [Document 1].\n- **Thời gian đào tạo:** Kéo dài 18 tháng (4 học kỳ) [Document 1, Document 2, Document 5].",
+      "source_ids": [
+        "news/article_02.md::chunk-0",
+        "news/article_03.md::chunk-2",
+        "news/article_02.md::chunk-1",
+        "news/article_01.md::chunk-0",
+        "news/article_01.md::chunk-2"
+      ],
+      "latency_seconds": 7.1,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.2434,
+        "answer_relevance": 0.3783,
+        "context_recall": 1.0,
+        "context_precision": 0.8333
+      },
+      "retrieval_latency_seconds": 0.4767
+    },
+    {
+      "case_index": 2,
+      "config": "hybrid_rrf",
+      "question": "Học phí toàn chương trình Thạc sĩ Quản trị Kinh doanh (MBA) tại VinUni là bao nhiêu và thời gian đào tạo kéo dài bao lâu?",
+      "answer": "Dựa trên các tài liệu được cung cấp, thông tin về chương trình Thạc sĩ Quản trị Kinh doanh (MBA) tại VinUni như sau:\n\n- **Học phí toàn chương trình:** 1.398.600.000 VNĐ (Phí USD tham khảo: 60.000 USD) cho thời gian đào tạo 18 tháng, cộng thêm chi phí Immersion Program [Document 1].\n- **Thời gian đào tạo:** Thời gian đào tạo chuẩn là 18 tháng (4 học kỳ) [Document 5].",
+      "source_ids": [
+        "news/article_02.md::chunk-0",
+        "news/article_03.md::chunk-2",
+        "news/article_02.md::chunk-1",
+        "news/article_03.md::chunk-0",
+        "news/article_01.md::chunk-2"
+      ],
+      "latency_seconds": 6.54,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.3276,
+        "answer_relevance": 0.4048,
+        "context_recall": 1.0,
+        "context_precision": 0.8333
+      },
+      "retrieval_latency_seconds": 0.4828
+    },
+    {
+      "case_index": 3,
+      "config": "dense_only",
+      "question": "Học phí toàn bộ chương trình Tiến sĩ Khoa học Máy tính tại VinUni trong 4 năm là bao nhiêu?",
+      "answer": "Học phí toàn bộ chương trình Tiến sĩ Khoa học Máy tính tại VinUni trong 4 năm là 3.729.600.000 VNĐ (~160.000 USD) [Document 1].",
+      "source_ids": [
+        "news/article_02.md::chunk-2",
+        "news/article_02.md::chunk-0",
+        "news/article_03.md::chunk-2",
+        "news/article_01.md::chunk-0",
+        "news/article_02.md::chunk-1"
+      ],
+      "latency_seconds": 6.76,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.4046,
+        "answer_relevance": 0.6128,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 0.4095
+    },
+    {
+      "case_index": 3,
+      "config": "hybrid_rrf",
+      "question": "Học phí toàn bộ chương trình Tiến sĩ Khoa học Máy tính tại VinUni trong 4 năm là bao nhiêu?",
+      "answer": "Học phí toàn bộ chương trình Tiến sĩ Khoa học Máy tính tại VinUni trong 4 năm là 3.729.600.000 VNĐ (~160.000 USD) [Document 1].",
+      "source_ids": [
+        "news/article_02.md::chunk-2",
+        "news/article_01.md::chunk-2",
+        "news/article_02.md::chunk-1",
+        "news/article_01.md::chunk-0",
+        "news/article_03.md::chunk-2"
+      ],
+      "latency_seconds": 6.97,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.4149,
+        "answer_relevance": 0.6123,
+        "context_recall": 1.0,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 0.4144
+    },
+    {
+      "case_index": 4,
+      "config": "dense_only",
+      "question": "Chương trình đào tạo thạc sĩ tại Việt Nam và VinUni thường kéo dài bao lâu?",
+      "answer": "Dựa trên các tài liệu được cung cấp, thời gian đào tạo thạc sĩ được quy định như sau:\n\n* **Tại Việt Nam:** Thời gian trung bình để học thạc sĩ tại Việt Nam kéo dài từ 1,5 đến 2 năm, tùy thuộc vào hình thức và quy chế của từng trường [Document 2]:\n  * *Đào tạo theo định hướng nghiên cứu:* Thường kéo dài 2 năm [Document 2].\n  * *Đào tạo theo định hướng ứng dụng:* Thường kéo dài 1,5 năm (hoặc 18 tháng) [Document 2].\n* **Tại VinUni:** Chương trình Thạc sĩ Quản trị Kinh doanh về Đổi mới Sáng tạo và Trí tuệ Nhân tạo (MBA) có thời gian đào tạo chuẩn là 18 tháng (4 học kỳ) [Document 1, Document 4].",
+      "source_ids": [
+        "news/article_03.md::chunk-2",
+        "news/article_03.md::chunk-0",
+        "news/article_03.md::chunk-1",
+        "news/article_02.md::chunk-0",
+        "legal/vinuni-policy-tien-si.md::chunk-4"
+      ],
+      "latency_seconds": 2.088,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.3736,
+        "answer_relevance": 0.3865,
+        "context_recall": 1.0,
+        "context_precision": 0.7556
+      },
+      "retrieval_latency_seconds": 0.4577
+    },
+    {
+      "case_index": 4,
+      "config": "hybrid_rrf",
+      "question": "Chương trình đào tạo thạc sĩ tại Việt Nam và VinUni thường kéo dài bao lâu?",
+      "answer": "Dựa trên các tài liệu được cung cấp, thời gian đào tạo thạc sĩ được quy định như sau:\n\n* **Tại Việt Nam:** Thời gian đào tạo thạc sĩ thông thường kéo dài từ 1,5 đến 2 năm, tùy thuộc vào hình thức đào tạo và quy chế của từng trường [Document 5]. Cụ thể:\n  * **Đào tạo theo định hướng ứng dụng:** Thường kéo dài 1,5 năm (hoặc 18 tháng) [Document 5].\n  * **Đào tạo theo định hướng nghiên cứu:** Thường kéo dài 2 năm [Document 5].\n* **Tại VinUni:** Chương trình Thạc sĩ Quản trị Kinh doanh về Đổi mới Sáng tạo và Trí tuệ Nhân tạo (MBA) có thời gian đào tạo chuẩn là 18 tháng (4 học kỳ) [Document 1], [Document 3]. Học viên có thể gia hạn hoặc bảo lưu theo quy chế đào tạo sau đại học của trường nhưng không vượt quá thời gian tối đa theo quy định của Bộ Giáo dục và Đào tạo [Document 1].",
+      "source_ids": [
+        "news/article_03.md::chunk-2",
+        "news/article_03.md::chunk-1",
+        "news/article_03.md::chunk-0",
+        "legal/vinuni-policy-tien-si.md::chunk-4",
+        "news/article_02.md::chunk-0"
+      ],
+      "latency_seconds": 2.264,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.4169,
+        "answer_relevance": 0.3243,
+        "context_recall": 1.0,
+        "context_precision": 0.9167
+      },
+      "retrieval_latency_seconds": 0.4654
+    },
+    {
+      "case_index": 5,
+      "config": "dense_only",
+      "question": "Quy trình ứng tuyển đại học dành cho sinh viên năm nhất tại VinUni gồm mấy vòng?",
+      "answer": "Dựa trên các tài liệu được cung cấp, quy trình xét duyệt hồ sơ ứng tuyển dành cho sinh viên năm nhất tại VinUni trải qua quá trình sơ tuyển và xét duyệt qua hai vòng [Document 1].",
+      "source_ids": [
+        "news/article_04.md::chunk-1",
+        "news/article_04.md::chunk-0",
+        "news/article_04.md::chunk-3",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_05.md::chunk-0"
+      ],
+      "latency_seconds": 1.658,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.2878,
+        "answer_relevance": 0.2222,
+        "context_recall": 0.75,
+        "context_precision": 0.8333
+      },
+      "retrieval_latency_seconds": 0.4834
+    },
+    {
+      "case_index": 5,
+      "config": "hybrid_rrf",
+      "question": "Quy trình ứng tuyển đại học dành cho sinh viên năm nhất tại VinUni gồm mấy vòng?",
+      "answer": "Quy trình xét duyệt hồ sơ ứng tuyển đại học dành cho sinh viên năm nhất tại VinUni trải qua quá trình sơ tuyển và xét duyệt qua hai vòng [Document 2]:\n\n1. **Sàng lọc trước** (Hội đồng tuyển sinh sàng lọc các đơn đăng ký không đáp ứng tiêu chuẩn tối thiểu) [Document 2].\n2. **Vòng 2: Phỏng vấn và Đánh giá cá nhân** (Bao gồm cuộc phỏng vấn cá nhân hoặc thử thách theo kịch bản tình huống với hội đồng giảng viên) [Document 4].",
+      "source_ids": [
+        "news/article_04.md::chunk-0",
+        "news/article_05.md::chunk-0",
+        "news/article_04.md::chunk-1",
+        "news/article_04.md::chunk-3",
+        "news/article_03.md::chunk-2"
+      ],
+      "latency_seconds": 1.54,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.4354,
+        "answer_relevance": 0.2921,
+        "context_recall": 0.5,
+        "context_precision": 0.4167
+      },
+      "retrieval_latency_seconds": 0.4914
+    },
+    {
+      "case_index": 6,
+      "config": "dense_only",
+      "question": "Thí sinh có cần nộp đơn riêng để xin học bổng tài năng khi ứng tuyển vào VinUni không?",
+      "answer": "Thí sinh không cần nộp đơn riêng để xin học bổng tài năng, bởi vì tất cả ứng viên trúng tuyển sẽ được tự động xét duyệt học bổng tài năng dựa trên hồ sơ [Document 5].",
+      "source_ids": [
+        "news/article_01.md::chunk-1",
+        "news/article_04.md::chunk-4",
+        "news/article_04.md::chunk-1",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_05.md::chunk-0"
+      ],
+      "latency_seconds": 1.402,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.3063,
+        "answer_relevance": 0.4503,
+        "context_recall": 0.5,
+        "context_precision": 0.5
+      },
+      "retrieval_latency_seconds": 0.472
+    },
+    {
+      "case_index": 6,
+      "config": "hybrid_rrf",
+      "question": "Thí sinh có cần nộp đơn riêng để xin học bổng tài năng khi ứng tuyển vào VinUni không?",
+      "answer": "Thí sinh không cần nộp đơn riêng để xin học bổng tài năng, bởi vì tất cả ứng viên trúng tuyển sẽ tự động được xét duyệt học bổng tài năng dựa trên hồ sơ [Document 5].",
+      "source_ids": [
+        "news/article_01.md::chunk-1",
+        "news/article_04.md::chunk-4",
+        "news/article_04.md::chunk-1",
+        "news/article_05.md::chunk-0",
+        "news/article_04.md::chunk-0"
+      ],
+      "latency_seconds": 1.587,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.318,
+        "answer_relevance": 0.4846,
+        "context_recall": 0.5,
+        "context_precision": 0.5
+      },
+      "retrieval_latency_seconds": 0.4797
+    },
+    {
+      "case_index": 7,
+      "config": "dense_only",
+      "question": "Trụ cột tiêu chí A-ACC trong tuyển sinh đại học tại VinUni bao gồm những yếu tố nào?",
+      "answer": "Dựa trên context được cung cấp, tài liệu chỉ đề cập rằng quá trình đánh giá ứng viên dựa trên 2 trụ cột tiêu chí toàn diện (mô hình A-ACC và EXCEL) [Document 1]. Tuy nhiên, context không cung cấp thông tin chi tiết về các yếu tố cụ thể bao gồm trong trụ cột tiêu chí A-ACC. Do đó, tôi từ chối xác minh chi tiết các yếu tố của trụ cột này do thiếu evidence.",
+      "source_ids": [
+        "news/article_05.md::chunk-0",
+        "legal/vinuni-policy-cu-nhan.md::chunk-1",
+        "news/article_04.md::chunk-1",
+        "legal/vinuni-policy-tien-si.md::chunk-5",
+        "legal/vinuni-policy-thac-sy.md::chunk-6"
+      ],
+      "latency_seconds": 1.464,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.148,
+        "answer_relevance": 0.1753,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.4722
+    },
+    {
+      "case_index": 7,
+      "config": "hybrid_rrf",
+      "question": "Trụ cột tiêu chí A-ACC trong tuyển sinh đại học tại VinUni bao gồm những yếu tố nào?",
+      "answer": "Trụ cột tiêu chí A-ACC trong tuyển sinh đại học tại VinUni bao gồm các yếu tố sau:\n\n* **A – Khả năng vượt trội (Outstanding Ability):** Thể hiện qua kết quả học tập THPT, điểm thi chuẩn hóa quốc tế (SAT, ACT, IELTS, TOEFL), các giải thưởng học sinh giỏi quốc gia/quốc tế và dự án nghiên cứu khoa học [Document 5].\n* **A – Khát vọng (Aspiration):** Câu chuyện cá nhân về mục tiêu cuộc đời, ước mơ tạo ra những tác động tích cực và truyền cảm hứng cho cộng đồng [Document 5].",
+      "source_ids": [
+        "news/article_05.md::chunk-0",
+        "news/article_05.md::chunk-1",
+        "legal/vinuni-policy-tien-si.md::chunk-1",
+        "news/article_04.md::chunk-1",
+        "legal/vinuni-policy-tien-si.md::chunk-0"
+      ],
+      "latency_seconds": 1.776,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.5064,
+        "answer_relevance": 0.2885,
+        "context_recall": 0.3333,
+        "context_precision": 0.5
+      },
+      "retrieval_latency_seconds": 0.4793
+    },
+    {
+      "case_index": 8,
+      "config": "dense_only",
+      "question": "Mô hình tiêu chí EXCEL tại VinUni đánh giá những năng lực gì của ứng viên?",
+      "answer": "Mô hình tiêu chí EXCEL tại VinUni đánh giá những năng lực của ứng viên bao gồm:\n\n- **E – Đồng cảm (Empathy):** Thấu hiểu nhu cầu của xã hội, tích cực tham gia hoạt động tình nguyện, thiện nguyện [Document 5].\n- **X – Năng lực vượt trội (Exceptional Capability):** Kỹ năng thực thi và năng lực thích ứng với môi trường học thuật quốc tế [Document 5].\n- **C – Sáng tạo đổi mới (Creativity):** Khả năng tư duy đột phá (thinking outside the box) [Document 5].",
+      "source_ids": [
+        "news/article_05.md::chunk-0",
+        "news/article_05.md::chunk-3",
+        "news/article_04.md::chunk-1",
+        "news/article_04.md::chunk-3",
+        "legal/vinuni-policy-cu-nhan.md::chunk-1"
+      ],
+      "latency_seconds": 3.473,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.4245,
+        "answer_relevance": 0.3396,
+        "context_recall": 0.4286,
+        "context_precision": 0.5
+      },
+      "retrieval_latency_seconds": 0.4532
+    },
+    {
+      "case_index": 8,
+      "config": "hybrid_rrf",
+      "question": "Mô hình tiêu chí EXCEL tại VinUni đánh giá những năng lực gì của ứng viên?",
+      "answer": "Mô hình tiêu chí EXCEL tại VinUni đánh giá những năng lực của ứng viên (thể hiện con đường phát triển tương lai) bao gồm:\n\n* **E – Đồng cảm (Empathy):** Thấu hiểu nhu cầu của xã hội, tích cực tham gia hoạt động tình nguyện, thiện nguyện [Document 5].\n* **X – Năng lực vượt trội (Exceptional Capability):** Kỹ năng thực thi và năng lực thích ứng với môi trường học thuật quốc tế [Document 5].\n* **C – Sáng tạo đổi mới (Creativity):** Khả năng tư duy đột phá (thinking outside the box) [Document 5].",
+      "source_ids": [
+        "news/article_05.md::chunk-0",
+        "news/article_05.md::chunk-3",
+        "news/article_04.md::chunk-3",
+        "news/article_01.md::chunk-1",
+        "news/article_04.md::chunk-1"
+      ],
+      "latency_seconds": 3.087,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.4315,
+        "answer_relevance": 0.3224,
+        "context_recall": 0.4286,
+        "context_precision": 0.5
+      },
+      "retrieval_latency_seconds": 0.4587
+    },
+    {
+      "case_index": 9,
+      "config": "dense_only",
+      "question": "Theo quy chế đào tạo đại học của VinUni, một tín chỉ tương đương với bao nhiêu giờ học?",
+      "answer": "Dựa trên ngữ cảnh được cung cấp, không có thông tin nào đề cập đến quy chế đào tạo *đại học* của VinUni định nghĩa một tín chỉ tương đương với bao nhiêu giờ học. \n\nTuy nhiên, tài liệu quy định về trình độ *thạc sĩ* của VinUni có nêu: 1 tín chỉ tương đương 50 giờ học định mức [Document 5]. Do thiếu evidence chính xác cho cấp độ đào tạo đại học, tôi từ chối xác minh câu hỏi này theo cấp độ đại học.",
+      "source_ids": [
+        "news/article_03.md::chunk-2",
+        "legal/vinuni-policy-thac-sy.md::chunk-5",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-5"
+      ],
+      "latency_seconds": 1.586,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.1811,
+        "answer_relevance": 0.3355,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.4313
+    },
+    {
+      "case_index": 9,
+      "config": "hybrid_rrf",
+      "question": "Theo quy chế đào tạo đại học của VinUni, một tín chỉ tương đương với bao nhiêu giờ học?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến \"quy chế đào tạo đại học của VinUni\" và số giờ học tương ứng cho một tín chỉ đối với bậc đại học. \n\nContext chỉ cung cấp quy định về quy đổi tín chỉ đối với trình độ thạc sĩ: \"1 tín chỉ tương đương 50 giờ học định mức (15 giờ lý thuyết; 30 - 45 giờ thực hành/thảo luận; 45 - 90 giờ thực tập thực tế; 45 - 60 giờ làm tiểu luận, đề án tốt nghiệp). Mỗi giờ giảng lý thuyết là 50 phút\" [Document 1]. \n\nDo thiếu evidence chính xác cho bậc đại học, tôi từ chối xác minh câu hỏi này.",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-5",
+        "news/article_03.md::chunk-2",
+        "news/article_01.md::chunk-5",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_01.md::chunk-4"
+      ],
+      "latency_seconds": 1.563,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.3519,
+        "answer_relevance": 0.2784,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.4395
+    },
+    {
+      "case_index": 10,
+      "config": "dense_only",
+      "question": "Số tín chỉ tối thiểu để một sinh viên đại học VinUni được công nhận trạng thái học toàn thời gian (full-time) trong một học kỳ là bao nhiêu?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến số tín chỉ tối thiểu để một sinh viên đại học VinUni được công nhận trạng thái học toàn thời gian (full-time) trong một học kỳ. Do đó, tôi từ chối xác minh khẳng định này.",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_01.md::chunk-4",
+        "news/article_01.md::chunk-5",
+        "news/article_04.md::chunk-1",
+        "legal/vinuni-policy-tien-si.md::chunk-5"
+      ],
+      "latency_seconds": 1.37,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.1029,
+        "answer_relevance": 0.419,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.5501
+    },
+    {
+      "case_index": 10,
+      "config": "hybrid_rrf",
+      "question": "Số tín chỉ tối thiểu để một sinh viên đại học VinUni được công nhận trạng thái học toàn thời gian (full-time) trong một học kỳ là bao nhiêu?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến số tín chỉ tối thiểu để một sinh viên đại học VinUni được công nhận trạng thái học toàn thời gian (full-time) trong một học kỳ. Do đó, tôi từ chối xác minh thông tin này.",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_01.md::chunk-5",
+        "news/article_04.md::chunk-1",
+        "news/article_01.md::chunk-2",
+        "legal/vinuni-policy-tien-si.md::chunk-13"
+      ],
+      "latency_seconds": 1.364,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.1148,
+        "answer_relevance": 0.4122,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.5593
+    },
+    {
+      "case_index": 11,
+      "config": "dense_only",
+      "question": "Theo quy chế đào tạo cử nhân VinUni, mức điểm CGPA tích lũy từ bao nhiêu thì được xếp loại học lực Xuất sắc (Excellent) và Giỏi (Very Good)?",
+      "answer": "Theo quy chế đào tạo cử nhân VinUni, mức điểm CGPA tích lũy để xếp loại học lực là:\n- **Xuất sắc (Excellent):** 3.60 - 4.00 [Document 4]\n- **Giỏi (Very good):** 3.20 - 3.59 [Document 4]",
+      "source_ids": [
+        "legal/vinuni-policy-cu-nhan.md::chunk-21",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "legal/vinuni-policy-cu-nhan.md::chunk-19",
+        "legal/vinuni-policy-cu-nhan.md::chunk-16",
+        "legal/vinuni-policy-tien-si.md::chunk-5"
+      ],
+      "latency_seconds": 1.561,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.1418,
+        "answer_relevance": 0.456,
+        "context_recall": 0.6667,
+        "context_precision": 0.25
+      },
+      "retrieval_latency_seconds": 0.586
+    },
+    {
+      "case_index": 11,
+      "config": "hybrid_rrf",
+      "question": "Theo quy chế đào tạo cử nhân VinUni, mức điểm CGPA tích lũy từ bao nhiêu thì được xếp loại học lực Xuất sắc (Excellent) và Giỏi (Very Good)?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến mức điểm CGPA cụ thể để xếp loại học lực \"Xuất sắc (Excellent)\" và \"Giỏi (Very Good)\" theo quy chế đào tạo cử nhân VinUni. Do thiếu evidence, tôi từ chối xác minh câu hỏi này.",
+      "source_ids": [
+        "legal/vinuni-policy-tien-si.md::chunk-3",
+        "legal/vinuni-policy-cu-nhan.md::chunk-21",
+        "legal/vinuni-policy-thac-sy.md::chunk-8",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "legal/vinuni-policy-cu-nhan.md::chunk-19"
+      ],
+      "latency_seconds": 1.223,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.0512,
+        "answer_relevance": 0.3507,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.5918
+    },
+    {
+      "case_index": 12,
+      "config": "dense_only",
+      "question": "Thời hạn rút môn học (Course Withdrawal) tại VinUni là khi nào và sinh viên được rút tối đa bao nhiêu tín chỉ trong toàn khóa học?",
+      "answer": "Dựa trên context được cung cấp:\n\n- **Thời hạn rút môn học (Course Withdrawal):** Được phép thực hiện sau hạn chót hủy môn (drop deadline) cho đến khi đạt 30% thời gian học của môn học đó [Document 5].\n- **Số tín chỉ được rút tối đa trong toàn khóa học:** Tối đa là 18 tín chỉ [Document 5].",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "legal/vinuni-policy-cu-nhan.md::chunk-14",
+        "news/article_03.md::chunk-2",
+        "news/article_01.md::chunk-5",
+        "news/article_01.md::chunk-4"
+      ],
+      "latency_seconds": 1.505,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.1131,
+        "answer_relevance": 0.4052,
+        "context_recall": 0.6667,
+        "context_precision": 0.5
+      },
+      "retrieval_latency_seconds": 0.5167
+    },
+    {
+      "case_index": 12,
+      "config": "hybrid_rrf",
+      "question": "Thời hạn rút môn học (Course Withdrawal) tại VinUni là khi nào và sinh viên được rút tối đa bao nhiêu tín chỉ trong toàn khóa học?",
+      "answer": "Dựa trên các context được cung cấp, không có thông tin nào đề cập đến thời hạn rút môn học (Course Withdrawal) tại VinUni cũng như số tín chỉ tối đa sinh viên được rút trong toàn khóa học. Do đó, tôi từ chối xác minh câu hỏi này do thiếu evidence.",
+      "source_ids": [
+        "news/article_01.md::chunk-4",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_03.md::chunk-2",
+        "news/article_01.md::chunk-5",
+        "news/article_04.md::chunk-1"
+      ],
+      "latency_seconds": 1.392,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.0835,
+        "answer_relevance": 0.3063,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.5248
+    },
+    {
+      "case_index": 13,
+      "config": "dense_only",
+      "question": "Chuẩn đầu ra ngoại ngữ đối với học viên tốt nghiệp trình độ thạc sĩ tại VinUni yêu cầu đạt trình độ tương đương bậc mấy?",
+      "answer": "Chuẩn đầu ra ngoại ngữ đối với học viên tốt nghiệp trình độ thạc sĩ tại VinUni yêu cầu đạt trình độ tương đương Bậc 4 theo Khung năng lực ngoại ngữ 6 bậc Việt Nam [Document 1].",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-11",
+        "legal/vinuni-policy-thac-sy.md::chunk-1",
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "legal/vinuni-policy-tien-si.md::chunk-5",
+        "legal/vinuni-policy-tien-si.md::chunk-9"
+      ],
+      "latency_seconds": 1.261,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.2432,
+        "answer_relevance": 0.5541,
+        "context_recall": 0.5,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 0.5324
+    },
+    {
+      "case_index": 13,
+      "config": "hybrid_rrf",
+      "question": "Chuẩn đầu ra ngoại ngữ đối với học viên tốt nghiệp trình độ thạc sĩ tại VinUni yêu cầu đạt trình độ tương đương bậc mấy?",
+      "answer": "Chuẩn đầu ra ngoại ngữ đối với học viên tốt nghiệp trình độ thạc sĩ tại VinUni yêu cầu đạt trình độ tương đương Bậc 4 theo Khung năng lực ngoại ngữ 6 bậc Việt Nam [Document 1].",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-11",
+        "legal/vinuni-policy-thac-sy.md::chunk-1",
+        "legal/vinuni-policy-tien-si.md::chunk-9",
+        "news/article_03.md::chunk-2",
+        "legal/vinuni-policy-thac-sy.md::chunk-0"
+      ],
+      "latency_seconds": 1.798,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.2398,
+        "answer_relevance": 0.5464,
+        "context_recall": 0.5,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 0.5408
+    },
+    {
+      "case_index": 14,
+      "config": "dense_only",
+      "question": "Trong chương trình đào tạo thạc sĩ tại VinUni, điểm đánh giá học phần từ mức nào trở lên thì được xếp loại đạt?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến điểm đánh giá học phần từ mức nào trở lên thì được xếp loại đạt trong chương trình đào tạo thạc sĩ tại VinUni. Do đó, tôi từ chối xác minh khẳng định này do thiếu evidence.",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "legal/vinuni-policy-thac-sy.md::chunk-1",
+        "legal/vinuni-policy-thac-sy.md::chunk-0",
+        "news/article_03.md::chunk-2",
+        "legal/vinuni-policy-tien-si.md::chunk-0"
+      ],
+      "latency_seconds": 1.522,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.0822,
+        "answer_relevance": 0.3512,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.4585
+    },
+    {
+      "case_index": 14,
+      "config": "hybrid_rrf",
+      "question": "Trong chương trình đào tạo thạc sĩ tại VinUni, điểm đánh giá học phần từ mức nào trở lên thì được xếp loại đạt?",
+      "answer": "Trong chương trình đào tạo thạc sĩ tại VinUni, sinh viên/học viên chỉ được xếp loại đạt khi điểm học phần từ mức C (2.0) trở lên [Document 2].",
+      "source_ids": [
+        "legal/vinuni-policy-thac-sy.md::chunk-6",
+        "news/article_03.md::chunk-2",
+        "legal/vinuni-policy-thac-sy.md::chunk-8",
+        "legal/vinuni-policy-thac-sy.md::chunk-1",
+        "legal/vinuni-policy-tien-si.md::chunk-10"
+      ],
+      "latency_seconds": 1.474,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.2759,
+        "answer_relevance": 0.3878,
+        "context_recall": 0.3333,
+        "context_precision": 0.3333
+      },
+      "retrieval_latency_seconds": 0.4677
+    },
+    {
+      "case_index": 15,
+      "config": "dense_only",
+      "question": "Thời gian đào tạo tiêu chuẩn của trình độ tiến sĩ tại VinUni là bao nhiêu năm đối với người có bằng thạc sĩ và người có bằng cử nhân?",
+      "answer": "Dựa trên các tài liệu được cung cấp, không có thông tin nào đề cập đến thời gian đào tạo tiêu chuẩn của trình độ tiến sĩ tại VinUni đối với người có bằng thạc sĩ và người có bằng cử nhân. Do đó, tôi từ chối xác minh thông tin này.",
+      "source_ids": [
+        "news/article_03.md::chunk-2",
+        "news/article_03.md::chunk-0",
+        "legal/vinuni-policy-tien-si.md::chunk-0",
+        "legal/vinuni-policy-thac-sy.md::chunk-1",
+        "legal/vinuni-policy-tien-si.md::chunk-5"
+      ],
+      "latency_seconds": 1.823,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.1277,
+        "answer_relevance": 0.3507,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      },
+      "retrieval_latency_seconds": 0.5153
+    },
+    {
+      "case_index": 15,
+      "config": "hybrid_rrf",
+      "question": "Thời gian đào tạo tiêu chuẩn của trình độ tiến sĩ tại VinUni là bao nhiêu năm đối với người có bằng thạc sĩ và người có bằng cử nhân?",
+      "answer": "Thời gian đào tạo tiêu chuẩn của trình độ tiến sĩ tại VinUni đối với người đã có bằng thạc sĩ là từ 03 năm (36 tháng), và đối với người có bằng đại học (chưa qua thạc sĩ) là từ 04 năm (48 tháng) [Document 4].",
+      "source_ids": [
+        "news/article_03.md::chunk-2",
+        "legal/vinuni-policy-tien-si.md::chunk-5",
+        "news/article_03.md::chunk-0",
+        "legal/vinuni-policy-tien-si.md::chunk-4",
+        "legal/vinuni-policy-thac-sy.md::chunk-1"
+      ],
+      "latency_seconds": 1.575,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.3201,
+        "answer_relevance": 0.4814,
+        "context_recall": 1.0,
+        "context_precision": 0.25
+      },
+      "retrieval_latency_seconds": 0.5224
+    },
+    {
+      "case_index": 16,
+      "config": "dense_only",
+      "question": "Người hướng dẫn nghiên cứu sinh tiến sĩ tại VinUni cần đáp ứng tiêu chuẩn nghiên cứu khoa học như thế nào trong 5 năm gần nhất?",
+      "answer": "Trong 05 năm gần nhất, người hướng dẫn nghiên cứu sinh tiến sĩ tại VinUni phải có công bố khoa học thuộc danh mục Web of Science / Scopus (WoS/Scopus), sách chuyên khảo uy tín hoặc bằng độc quyền sáng chế quốc gia/quốc tế với tổng điểm tối thiểu 4.0 điểm [Document 1].",
+      "source_ids": [
+        "legal/vinuni-policy-tien-si.md::chunk-5",
+        "legal/vinuni-policy-tien-si.md::chunk-0",
+        "legal/vinuni-policy-thac-sy.md::chunk-1",
+        "news/article_03.md::chunk-2",
+        "legal/vinuni-policy-thac-sy.md::chunk-0"
+      ],
+      "latency_seconds": 1.368,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.6263,
+        "answer_relevance": 0.3353,
+        "context_recall": 0.0,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 0.5216
+    },
+    {
+      "case_index": 16,
+      "config": "hybrid_rrf",
+      "question": "Người hướng dẫn nghiên cứu sinh tiến sĩ tại VinUni cần đáp ứng tiêu chuẩn nghiên cứu khoa học như thế nào trong 5 năm gần nhất?",
+      "answer": "Người hướng dẫn nghiên cứu sinh tiến sĩ tại VinUni trong 05 năm gần nhất phải có công bố khoa học thuộc danh mục Web of Science / Scopus (WoS/Scopus), sách chuyên khảo uy tín hoặc bằng độc quyền sáng chế quốc gia/quốc tế với tổng điểm tối thiểu 4.0 điểm [Document 1].",
+      "source_ids": [
+        "legal/vinuni-policy-tien-si.md::chunk-5",
+        "legal/vinuni-policy-thac-sy.md::chunk-9",
+        "legal/vinuni-policy-tien-si.md::chunk-13",
+        "legal/vinuni-policy-tien-si.md::chunk-0",
+        "legal/vinuni-policy-thac-sy.md::chunk-1"
+      ],
+      "latency_seconds": 1.354,
+      "provider_error": null,
+      "metrics": {
+        "faithfulness": 0.6227,
+        "answer_relevance": 0.3173,
+        "context_recall": 0.0,
+        "context_precision": 1.0
+      },
+      "retrieval_latency_seconds": 0.5276
+    }
+  ]
+}
