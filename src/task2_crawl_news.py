@@ -21,7 +21,11 @@ from pathlib import Path
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "news"
 
 ARTICLE_URLS = [
-    # TODO: Thêm ít nhất 5 public URL.
+    "https://www.facebook.com/vinuniversity/posts/pfbid0zdzvzhEdnAVRuY4qkUYFsDrefQ3GpNimWc7h1ncb6SWcyGhTUxeX32bFWBPUEk2sl?rdid=0KrTkhfEsXNYLapn#",
+    "https://admissions.vinuni.edu.vn/vi/dai-hoc/ung-tuyen-vao-vinuni/ung-vien-nam-nhat/quy-trinh-ung-tuyen/",
+    "https://vinuni.edu.vn/vi/hoc-thac-si-bao-nhieu-nam/",
+    "https://admissions.vinuni.edu.vn/vi/hoc-phi/sau-dai-hoc/",
+    "https://admissions.vinuni.edu.vn/vi/hoc-phi/cu-nhan/",
 ]
 
 
