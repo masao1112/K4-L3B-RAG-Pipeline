@@ -21,7 +21,7 @@ Giới hạn khuyến nghị: 1 trang, không chép lại README hoặc mô tả
 
 | Module/deliverable | Việc tôi trực tiếp làm | File/commit/PR | Trạng thái |
 |---|---|---|---|
-| `data` | Tìm tài liệu | task1_collect_legal_docs.py, task2_crawl_news.py | **Done** / Partial / Blocked |
+| `data` | Tìm tài liệu | task1_collect_legal_docs.py, task2_crawl_news.py, task3_convert_markdown.py | **Done** / Partial / Blocked |
 
 Chỉ kê khai công việc có thể đối chiếu bằng file, commit, pull request, test hoặc kết quả evaluation.
 
@@ -43,7 +43,7 @@ Mô tả tối đa hai quyết định mà bạn trực tiếp tham gia:
 - Kết quả trước/sau nếu có: 
 - Lỗi đã phát hiện và cách xử lý: 
 
-## Điều còn hạn chế
+## Điều còn hạn chế 
 
 - Một hạn chế cụ thể của phần tôi làm: Chưa kiểm tra kỹ tài liệu tải về 
 - Nếu có thêm thời gian, thay đổi đầu tiên tôi sẽ thực hiện: 
