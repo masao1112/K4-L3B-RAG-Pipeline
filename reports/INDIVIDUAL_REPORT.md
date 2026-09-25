@@ -12,16 +12,16 @@ Giới hạn khuyến nghị: 1 trang, không chép lại README hoặc mô tả
 
 ## Thông tin
 
-- Họ và tên:
-- Mã học viên:
-- Nhóm:
-- Repository/branch:
+- Họ và tên: Ngô Hoàng Thụy Khuê
+- Mã học viên: 2A202603017
+- Nhóm: Bốn 
+- Repository/branch: khue
 
 ## Phần việc đã thực hiện
 
 | Module/deliverable | Việc tôi trực tiếp làm | File/commit/PR | Trạng thái |
 |---|---|---|---|
-| | | | Done / Partial / Blocked |
+| `data` | Tìm tài liệu | task1_collect_legal_docs.py, task2_crawl_news.py | **Done** / Partial / Blocked |
 
 Chỉ kê khai công việc có thể đối chiếu bằng file, commit, pull request, test hoặc kết quả evaluation.
 
@@ -29,9 +29,9 @@ Chỉ kê khai công việc có thể đối chiếu bằng file, commit, pull r
 
 Mô tả tối đa hai quyết định mà bạn trực tiếp tham gia:
 
-1. **Quyết định:**  
-   **Lý do/evidence:**  
-   **Trade-off:**
+1. **Quyết định:**  Chọn dữ liệu quy chế đại học VinUni
+   **Lý do/evidence:**  Dữ liệu sạch, lấy thông tin từ trang web chính thức của trường 
+   **Trade-off:** Ngôn ngữ không đồng nhất giữa tiếng Việt và tiếng Anh cho một vài file.
 
 2. **Quyết định:**  
    **Lý do/evidence:**  
@@ -39,18 +39,18 @@ Mô tả tối đa hai quyết định mà bạn trực tiếp tham gia:
 
 ## Kiểm thử và kết quả
 
-- Test hoặc query tôi đã dùng:
-- Kết quả trước/sau nếu có:
-- Lỗi đã phát hiện và cách xử lý:
+- Test hoặc query tôi đã dùng: 
+- Kết quả trước/sau nếu có: 
+- Lỗi đã phát hiện và cách xử lý: 
 
 ## Điều còn hạn chế
 
-- Một hạn chế cụ thể của phần tôi làm:
-- Nếu có thêm thời gian, thay đổi đầu tiên tôi sẽ thực hiện:
+- Một hạn chế cụ thể của phần tôi làm: Chưa kiểm tra kỹ tài liệu tải về 
+- Nếu có thêm thời gian, thay đổi đầu tiên tôi sẽ thực hiện: 
 
 ## Xác nhận đóng góp
 
 Tôi xác nhận nội dung trên phản ánh đúng phần việc của mình và có thể giải thích hoặc chạy lại trong buổi demo.
 
-- Ngày:
-- Tên thành viên:
+- Ngày: 25/09/2026
+- Tên thành viên: Ngô Hoàng Thụy Khuê

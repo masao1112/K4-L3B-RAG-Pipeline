@@ -4,10 +4,9 @@ Task 6 — Lexical search bằng BM25.
 Dùng cùng corpus chunks với Task 5. BM25 phù hợp với từ khóa chính xác, mã tài
 liệu và tên riêng. Output phải theo SearchResult và sort score giảm dần.
 """
+from src.task4_chunking_indexing import load_documents, chunk_documents
 
-
-CORPUS: list[dict] = []
-
+CORPUS = chunk_documents(load_documents())
 
 def build_bm25_index(corpus: list[dict]):
     """Tạo BM25 index từ cùng corpus chunks của Task 4."""

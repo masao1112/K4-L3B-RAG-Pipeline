@@ -253,3 +253,10 @@ def test_generation_result_validator_accepts_safe_refusal():
             "retrieval_source": "none",
         }
     )
+
+
+def test_pageindex_search_is_safe_when_unconfigured(monkeypatch):
+    import src.task8_pageindex_vectorless as task8
+
+    monkeypatch.delenv("PAGEINDEX_API_KEY", raising=False)
+    assert task8.pageindex_search("tuition fee", top_k=3) == []

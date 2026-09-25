@@ -35,27 +35,27 @@ def reorder_for_llm(chunks: list[dict]) -> list[dict]:
     """Đưa chunks quan trọng về đầu và cuối context."""
     # TODO: Implement document reordering.
     #
-    # if len(chunks) <= 2:
-    #     return list(chunks)
-    # front = chunks[::2]
-    # back = chunks[1::2]
-    # return front + back[::-1]
-    raise NotImplementedError("Implement reorder_for_llm")
+    if len(chunks) <= 2:
+        return list(chunks)
+    front = chunks[::2]
+    back = chunks[1::2]
+    return front + back[::-1]
+    # raise NotImplementedError("Implement reorder_for_llm")
 
 
 def format_context(chunks: list[dict]) -> str:
     """Tạo context có title và source label."""
     # TODO: Format chunks để LLM tạo citation kiểm chứng được.
     #
-    # parts = []
-    # for index, chunk in enumerate(chunks, 1):
-    #     metadata = chunk["metadata"]
-    #     parts.append(
-    #         f"[Document {index} | Title: {metadata['title']} | "
-    #         f"Source: {metadata['source']}]\n{chunk['content']}"
-    #     )
-    # return "\n\n---\n\n".join(parts)
-    raise NotImplementedError("Implement format_context")
+    parts = []
+    for index, chunk in enumerate(chunks, 1):
+        metadata = chunk["metadata"]
+        parts.append(
+            f"[Document {index} | Title: {metadata['title']} | "
+            f"Source: {metadata['source']}]\n{chunk['content']}"
+        )
+    return "\n\n---\n\n".join(parts)
+    # raise NotImplementedError("Implement format_context")
 
 
 def call_llm(system_prompt: str, user_message: str) -> str:
@@ -67,30 +67,30 @@ def call_llm(system_prompt: str, user_message: str) -> str:
     # - anthropic -> ANTHROPIC_API_KEY
     #
     # Dùng LLM_MODEL và trả về text thuần cho cả ba nhánh.
-    raise NotImplementedError("Implement call_llm")
+    # raise NotImplementedError("Implement call_llm")
 
 
 def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
     """Trả về GenerationResult."""
     # TODO: Implement end-to-end generation.
     #
-    # chunks = retrieve(query, top_k=top_k)
-    # if not chunks:
-    #     return {
-    #         "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
-    #         "sources": [],
-    #         "retrieval_source": "none",
-    #     }
-    # reordered = reorder_for_llm(chunks)
-    # context = format_context(reordered)
-    # user_message = f"Context:\n{context}\n\nQuestion: {query}"
-    # answer = call_llm(SYSTEM_PROMPT, user_message)
-    # return {
-    #     "answer": answer,
-    #     "sources": chunks,
-    #     "retrieval_source": chunks[0]["retrieval_method"],
-    # }
-    raise NotImplementedError("Implement generate_with_citation")
+    chunks = retrieve(query, top_k=top_k)
+    if not chunks:
+        return {
+            "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+            "sources": [],
+            "retrieval_source": "none",
+        }
+    reordered = reorder_for_llm(chunks)
+    context = format_context(reordered)
+    user_message = f"Context:\n{context}\n\nQuestion: {query}"
+    answer = call_llm(SYSTEM_PROMPT, user_message)
+    return {
+        "answer": answer,
+        "sources": chunks,
+        "retrieval_source": chunks[0]["retrieval_method"],
+    }
+    # raise NotImplementedError("Implement generate_with_citation")
 
 
 if __name__ == "__main__":
