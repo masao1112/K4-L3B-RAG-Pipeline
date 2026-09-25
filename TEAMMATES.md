@@ -11,7 +11,7 @@
 | :---: | :--- | :---: | :--- | :--- | :--- |
 | 1 | **Lương Nguyễn Tiến Anh** | 2A202603002 | Data Engineer & Chunking Lead | `TienAnh` | - Thu thập & chuẩn hóa tài liệu (Task 1, 2, 3)<br>- Thiết kế chiến lược Chunking & Embedding (Task 4) |
 | 2 | **Đặng Quang Huy** | 2A202602962 | Pipeline & Retrieval Engineer | `quanghuy` | - Recursive chunking & Vector DB Chroma (Task 4)<br>- Semantic Search, BM25 & RRF Reranking (Task 5, 6, 7)<br>- Fallback & Retrieval Pipeline (Task 8, 9)<br>- Generation có Citation & Safe Refusal (Task 10) |
-| 3 | **Ngô Hoàng Thủy Khuê** | 2A202603017 | Frontend Engineer & Data Curator | `khue` | - Thu thập & làm giàu dữ liệu tin tức tuyển sinh (Task 2, 3)<br>- Phát triển giao diện Chatbot Streamlit (`app.py`)<br>- Hiển thị trích dẫn nguồn, điểm tương đồng & tham số |
+| 3 | **Ngô Hoàng Thụy Khuê** | 2A202603017 | Frontend Engineer & Data Curator | `khue` | - Thu thập & làm giàu dữ liệu tin tức tuyển sinh (Task 2, 3)<br>- Phát triển giao diện Chatbot Streamlit (`app.py`)<br>- Hiển thị trích dẫn nguồn, điểm tương đồng & tham số |
 | 4 | **Đào Quang Thái Anh** | 2A202602987 | QA & Evaluation Lead | `thaianh/02987` | - Kiểm định chất lượng dữ liệu và hợp đồng module (`tests/`)<br>- Xây dựng Golden Dataset $\ge 15$ câu (`golden_dataset.json`)<br>- Đánh giá 4 chỉ số RAG (A/B Testing) & Hoàn thiện `RESULT.md` |
 
 ---
