@@ -184,7 +184,6 @@ def compute_sentence_similarities(sentences: list[str]) -> list[float]:
     if len(sentences) <= 1:
         return []
 
-    # 1. Nếu embedding model đã sẵn sàng trong cache, tính trực tiếp bằng vector embedding
     if _MODEL_CACHE:
         try:
             import numpy as np
@@ -203,7 +202,6 @@ def compute_sentence_similarities(sentences: list[str]) -> list[float]:
         except Exception:
             pass
 
-    # 2. Vectorizer ngữ nghĩa qua TF-IDF cosine similarity (chuẩn xác, nhẹ, tức thì)
     try:
         from sklearn.feature_extraction.text import TfidfVectorizer
         from sklearn.metrics.pairwise import cosine_similarity
@@ -311,45 +309,57 @@ def split_text(text: str, method: str = CHUNKING_METHOD) -> list[str]:
 
 def load_documents() -> list[dict]:
     """Đọc Markdown và trả về danh sách Document."""
-    documents = []
+    documents: list[dict] = []
     if not STANDARDIZED_DIR.exists():
         return documents
 
     for path in sorted(STANDARDIZED_DIR.rglob("*.md")):
         if path.name.startswith("."):
             continue
-        doc_type = "legal" if "legal" in path.parts else "news"
         content = path.read_text(encoding="utf-8").strip()
         if not content:
             continue
-        documents.append({
-            "id": path.relative_to(STANDARDIZED_DIR).as_posix(),
-            "content": content,
-            "metadata": {
-                "source": path.name,
-                "title": path.stem,
-                "doc_type": doc_type,
-                "url": None,
-            },
-        })
+
+        heading = re.search(r"^#\s+(.+?)\s*$", content, flags=re.MULTILINE)
+        source_url = re.search(
+            r"^\*\*Source:\*\*\s*(https?://\S+)",
+            content,
+            flags=re.MULTILINE | re.IGNORECASE,
+        )
+        relative_path = path.relative_to(STANDARDIZED_DIR)
+        documents.append(
+            {
+                "id": relative_path.as_posix(),
+                "content": content,
+                "metadata": {
+                    "source": path.name,
+                    "title": heading.group(1).strip() if heading else path.stem,
+                    "doc_type": "legal" if "legal" in relative_path.parts else "news",
+                    "url": source_url.group(1).rstrip(")]}.,") if source_url else None,
+                },
+            }
+        )
     return documents
 
 
 def chunk_documents(documents: list[dict]) -> list[dict]:
     """Chia Document thành chunks có id và chunk_index."""
-    chunks = []
+    chunks: list[dict] = []
+    maximum_length = int(CHUNK_SIZE * 1.1)
     for document in documents:
-        doc_id = document["id"]
-        doc_meta = document["metadata"]
-        text_chunks = split_text(document["content"], method=CHUNKING_METHOD)
-        for index, text in enumerate(text_chunks):
-            if not text.strip():
+        split_texts = split_text(document["content"], method=CHUNKING_METHOD)
+        for index, text in enumerate(split_texts):
+            content = text.strip()
+            if not content:
                 continue
-            chunks.append({
-                "id": f"{doc_id}::chunk-{index}",
-                "content": text,
-                "metadata": {**doc_meta, "chunk_index": index},
-            })
+            content = content[:maximum_length]
+            chunks.append(
+                {
+                    "id": f"{document['id']}::chunk-{index}",
+                    "content": content,
+                    "metadata": {**document["metadata"], "chunk_index": index},
+                }
+            )
     return chunks
 
 
@@ -364,8 +374,11 @@ def embed_chunks(chunks: list[dict], batch_size: int = 32) -> list[dict]:
         batch = contents[i : i + batch_size]
         all_embeddings.extend(embed_texts(batch))
 
+    if len(all_embeddings) != len(chunks):
+        raise ValueError("embedding provider returned an unexpected vector count")
+
     for chunk, vector in zip(chunks, all_embeddings):
-        chunk["embedding"] = vector
+        chunk["embedding"] = [float(value) for value in vector]
     return chunks
 
 
@@ -377,11 +390,18 @@ def index_to_vectorstore(chunks: list[dict], batch_size: int = 100) -> None:
     collection = get_collection()
     for i in range(0, len(chunks), batch_size):
         batch = chunks[i : i + batch_size]
+        metadatas = [
+            {
+                key: ("" if value is None else value)
+                for key, value in chunk["metadata"].items()
+            }
+            for chunk in batch
+        ]
         collection.upsert(
             ids=[chunk["id"] for chunk in batch],
             documents=[chunk["content"] for chunk in batch],
             embeddings=[chunk["embedding"] for chunk in batch],
-            metadatas=[chunk["metadata"] for chunk in batch],
+            metadatas=metadatas,
         )
 
 

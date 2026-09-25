@@ -21,29 +21,28 @@ from pathlib import Path
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "news"
 
 ARTICLE_URLS = [
-    "https://www.facebook.com/vinuniversity/posts/pfbid0zdzvzhEdnAVRuY4qkUYFsDrefQ3GpNimWc7h1ncb6SWcyGhTUxeX32bFWBPUEk2sl?rdid=0KrTkhfEsXNYLapn#",
-    "https://admissions.vinuni.edu.vn/vi/dai-hoc/ung-tuyen-vao-vinuni/ung-vien-nam-nhat/quy-trinh-ung-tuyen/",
-    "https://vinuni.edu.vn/vi/hoc-thac-si-bao-nhieu-nam/",
-    "https://admissions.vinuni.edu.vn/vi/hoc-phi/sau-dai-hoc/",
     "https://admissions.vinuni.edu.vn/vi/hoc-phi/cu-nhan/",
+    "https://admissions.vinuni.edu.vn/vi/hoc-phi/sau-dai-hoc/",
+    "https://vinuni.edu.vn/vi/hoc-thac-si-bao-nhieu-nam/",
+    "https://admissions.vinuni.edu.vn/vi/dai-hoc/ung-tuyen-vao-vinuni/ung-vien-nam-nhat/quy-trinh-ung-tuyen/",
+    "https://www.facebook.com/share/p/1C3G7AbG3n/"
 ]
 
 
 async def crawl_article(url: str) -> dict:
     # TODO: Implement crawling logic.
-    #
-    # from datetime import datetime
-    # from crawl4ai import AsyncWebCrawler
-    #
-    # async with AsyncWebCrawler() as crawler:
-    #     result = await crawler.arun(url=url)
-    #     return {
-    #         "url": url,
-    #         "title": result.metadata.get("title", "Unknown"),
-    #         "date_crawled": datetime.now().isoformat(),
-    #         "content_markdown": result.markdown,
-    #     }
-    raise NotImplementedError("Implement crawl_article")
+    from datetime import datetime
+    from crawl4ai import AsyncWebCrawler
+    
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(url=url)
+        return {
+            "url": url,
+            "title": result.metadata.get("title", "Unknown"),
+            "date_crawled": datetime.now().isoformat(),
+            "content_markdown": result.markdown,
+        }
+    # raise NotImplementedError("Implement crawl_article")
 
 
 async def crawl_all() -> None:
