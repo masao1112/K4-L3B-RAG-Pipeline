@@ -1,0 +1,87 @@
+[
+  {
+    "question": "Học phí niêm yết chương trình cử nhân tại VinUni có được hỗ trợ gì từ nhà sáng lập không?",
+    "expected_answer": "Có, mức học phí niêm yết được tự động áp dụng khoản hỗ trợ 35% học phí do Tập đoàn Vingroup tài trợ cho tất cả sinh viên trúng tuyển và duy trì trong suốt toàn bộ thời gian học tập tại trường.",
+    "expected_context": "Mức học phí này chưa bao gồm khoản hỗ trợ 35% học phí do Tập đoàn Vingroup – Nhà sáng lập VinUni tài trợ. Khoản hỗ trợ 35% học phí này được tự động áp dụng cho tất cả sinh viên trúng tuyển (bao gồm cả sinh viên Việt Nam và quốc tế) và duy trì trong suốt toàn bộ thời gian học tập tại trường."
+  },
+  {
+    "question": "Học phí niêm yết theo tín chỉ tại VinUni được áp dụng trong những trường hợp nào?",
+    "expected_answer": "Học phí theo tín chỉ áp dụng khi sinh viên học bổ sung tín chỉ cho chương trình song bằng (double degree), học vượt khung chuẩn (2 chuyên ngành hoặc 2 chuyên ngành phụ), học trao đổi tích hợp, học trao đổi ngắn hạn, học lại môn, hoặc chuyển tiếp từ trường đại học khác.",
+    "expected_context": "Học phí niêm yết theo tín chỉ được áp dụng trong các trường hợp: Học bổ sung tín chỉ khi học cùng lúc hai chương trình (double degree) tại VinUni; Học bổ sung tín chỉ vượt quá khung chương trình đào tạo chuẩn đã công bố tại thời điểm nhập học; Học bổ sung tín chỉ khi học chương trình tích hợp trao đổi tại các trường đối tác của VinUni; Học chương trình trao đổi ngắn hạn; Học lại môn; Chuyển tiếp từ một trường đại học khác."
+  },
+  {
+    "question": "Học phí toàn chương trình Thạc sĩ Quản trị Kinh doanh (MBA) tại VinUni là bao nhiêu và thời gian đào tạo kéo dài bao lâu?",
+    "expected_answer": "Học phí toàn chương trình Thạc sĩ Quản trị Kinh doanh (MBA) là 1.398.600.000 VNĐ (tương đương 60.000 USD) cho thời gian đào tạo 18 tháng gồm 4 kỳ.",
+    "expected_context": "Học phí/toàn chương trình: 1.398.600.000 VNĐ (Phí USD tham khảo: 60.000 USD) cho thời gian đào tạo 18 tháng, cộng thêm chi phí Immersion Program. Học phí sẽ được trả theo từng kỳ (tổng cộng 4 kỳ đào tạo)."
+  },
+  {
+    "question": "Học phí toàn bộ chương trình Tiến sĩ Khoa học Máy tính tại VinUni trong 4 năm là bao nhiêu?",
+    "expected_answer": "Học phí toàn bộ chương trình Tiến sĩ Khoa học Máy tính trong 4 năm là 3.729.600.000 VNĐ (tương đương khoảng 160.000 USD), tương ứng 932.400.000 VNĐ/năm.",
+    "expected_context": "2. TIẾN SĨ KHOA HỌC MÁY TÍNH: Học phí/năm: 932.400.000 VNĐ (~40.000 USD). Học phí/toàn bộ chương trình: 3.729.600.000 VNĐ trong 4 năm (~160.000 USD)."
+  },
+  {
+    "question": "Chương trình đào tạo thạc sĩ tại Việt Nam và VinUni thường kéo dài bao lâu?",
+    "expected_answer": "Tại Việt Nam, chương trình thạc sĩ thường kéo dài từ 1,5 đến 2 năm tùy định hướng nghiên cứu (2 năm) hay ứng dụng (1,5 năm). Tại VinUni, chương trình Thạc sĩ Quản trị Kinh doanh (MBA) có thời gian đào tạo chuẩn là 18 tháng.",
+    "expected_context": "Thông thường, thời gian đào tạo thạc sĩ tại Việt Nam kéo dài từ 1,5 đến 2 năm, tùy thuộc vào hình thức đào tạo và quy chế của từng trường: Đào tạo theo định hướng nghiên cứu: Thường kéo dài 2 năm; Đào tạo theo định hướng ứng dụng: Thường kéo dài 1,5 năm (hoặc 18 tháng). Chương trình Thạc sĩ Quản trị Kinh doanh về Đổi mới Sáng tạo và Trí tuệ Nhân tạo (MBA) tại VinUni có thời gian đào tạo chuẩn là 18 tháng (4 học kỳ)."
+  },
+  {
+    "question": "Quy trình ứng tuyển đại học dành cho sinh viên năm nhất tại VinUni gồm mấy vòng?",
+    "expected_answer": "Quy trình gồm khâu Sàng lọc trước và 2 vòng chính thức: Vòng 1 là Đánh giá hồ sơ trực tuyến (Shortlist) và Vòng 2 là Phỏng vấn, đánh giá cá nhân (trực tiếp hoặc qua Zoom).",
+    "expected_context": "Mỗi hồ sơ đều được xem xét kỹ lưỡng bởi đội ngũ giảng viên VinUni và các chuyên gia trong từng lĩnh vực tương ứng, đồng thời trải qua quá trình sơ tuyển và xét duyệt qua hai vòng: 1. Sàng lọc trước; 2. Vòng 1: Đánh giá hồ sơ trực tuyến (Shortlist); 3. Vòng 2: Phỏng vấn và Đánh giá cá nhân."
+  },
+  {
+    "question": "Thí sinh có cần nộp đơn riêng để xin học bổng tài năng khi ứng tuyển vào VinUni không?",
+    "expected_answer": "Không, tất cả các ứng viên trúng tuyển sẽ tự động được xét nhận học bổng tài năng dựa trên hồ sơ mà không cần nộp đơn xin học bổng riêng.",
+    "expected_context": "Tất cả ứng viên trúng tuyển tự động được xét duyệt học bổng tài năng dựa trên hồ sơ mà không cần làm đơn riêng. Ứng viên không cần nộp đơn xin học bổng dựa trên thành tích."
+  },
+  {
+    "question": "Trụ cột tiêu chí A-ACC trong tuyển sinh đại học tại VinUni bao gồm những yếu tố nào?",
+    "expected_answer": "Trụ cột A-ACC bao gồm: A - Khả năng vượt trội (Outstanding Ability), A - Khát vọng (Aspiration), C - Sáng tạo (Creativity), và C - Cam kết (Commitment).",
+    "expected_context": "Trụ cột A-ACC: Phác họa chân dung cá nhân: A – Khả năng vượt trội (Outstanding Ability); A – Khát vọng (Aspiration); C – Sáng tạo (Creativity); C – Cam kết (Commitment)."
+  },
+  {
+    "question": "Mô hình tiêu chí EXCEL tại VinUni đánh giá những năng lực gì của ứng viên?",
+    "expected_answer": "Mô hình EXCEL đánh giá 5 yếu tố: E - Đồng cảm (Empathy), X - Năng lực vượt trội (Exceptional Capability), C - Sáng tạo đổi mới (Creativity), E - Tư duy khởi nghiệp (Entrepreneurial Mindset), và L - Tinh thần lãnh đạo (Leadership Spirit).",
+    "expected_context": "Trụ cột EXCEL: Thể hiện con đường phát triển tương lai: E – Đồng cảm (Empathy); X – Năng lực vượt trội (Exceptional Capability); C – Sáng tạo đổi mới (Creativity); E – Tư duy khởi nghiệp (Entrepreneurial Mindset); L – Tinh thần lãnh đạo (Leadership Spirit)."
+  },
+  {
+    "question": "Theo quy chế đào tạo đại học của VinUni, một tín chỉ tương đương với bao nhiêu giờ học?",
+    "expected_answer": "Một tín chỉ tương đương với 50 giờ học định mức của sinh viên, bao gồm khoảng 15 giờ giảng lý thuyết trên lớp và sinh viên được khuyên dành ít nhất 30 giờ tự học trong học kỳ.",
+    "expected_context": "A credit is a unit that is used to determine the amount of academic work of a student. A credit is equivalent to 50 hours of study for students, including taught study (contact hours), tutorials, self-managed study, experiential learning, assessments, and exams. 1 credit is roughly equivalent to 15 contact hours for courses that use a lecture or classroom-based instruction; for each credit, students are advised to spend at least 30 self-study hours."
+  },
+  {
+    "question": "Số tín chỉ tối thiểu để một sinh viên đại học VinUni được công nhận trạng thái học toàn thời gian (full-time) trong một học kỳ là bao nhiêu?",
+    "expected_answer": "Sinh viên phải đăng ký tối thiểu 12 tín chỉ trong một học kỳ chính (tương đương 80% của mức tải học tập bình thường) để được công nhận là sinh viên học toàn thời gian.",
+    "expected_context": "To be classified as a full-time student, s/he must be enrolled in at a minimum, 80% of a normal full-time load in a regular Semester (equivalent to 12 credits). A normal full-time load is 30 credits spread over an academic year."
+  },
+  {
+    "question": "Theo quy chế đào tạo cử nhân VinUni, mức điểm CGPA tích lũy từ bao nhiêu thì được xếp loại học lực Xuất sắc (Excellent) và Giỏi (Very Good)?",
+    "expected_answer": "Mức điểm CGPA từ 3.60 đến 4.00 được xếp loại Xuất sắc (Excellent), và từ 3.20 đến 3.59 được xếp loại Giỏi (Very Good).",
+    "expected_context": "Academic Standing based on cumulative grade point average GPA: Excellent: 3.60 – 4.00; Very good: 3.20 – 3.59; Good: 2.50 – 3.19; Marginal: 2.00 – 2.49; Unsatisfactory (At risk): Below 2.0."
+  },
+  {
+    "question": "Thời hạn rút môn học (Course Withdrawal) tại VinUni là khi nào và sinh viên được rút tối đa bao nhiêu tín chỉ trong toàn khóa học?",
+    "expected_answer": "Rút môn học phải thực hiện sau thời hạn hủy môn (drop period) và trước khi hoàn thành quá 30% thời lượng của môn học đó; sinh viên được rút tối đa 18 tín chỉ trong toàn bộ khóa học và nhận điểm W trên bảng điểm.",
+    "expected_context": "Withdrawal from a course is permitted after the course dropping period and must occur before completing no more than 30% of the study time for that course. The withdrawal limit policy allows students to withdraw from a maximum of 18 credits over the entire program of study. 'W-Withdrawn' grade will be assigned on a student's transcript."
+  },
+  {
+    "question": "Chuẩn đầu ra ngoại ngữ đối với học viên tốt nghiệp trình độ thạc sĩ tại VinUni yêu cầu đạt trình độ tương đương bậc mấy?",
+    "expected_answer": "Học viên phải đạt trình độ ngoại ngữ tương đương Bậc 4 theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam (ví dụ IELTS từ 5.5 đến 6.5 hoặc TOEFL iBT từ 46 đến 93).",
+    "expected_context": "Có trình độ ngoại ngữ đạt yêu cầu theo chuẩn đầu ra của chương trình đào tạo trước thời điểm xét tốt nghiệp; được minh chứng bằng một trong các văn bằng hoặc chứng chỉ ngoại ngữ đạt trình độ tương đương Bậc 4 theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam."
+  },
+  {
+    "question": "Trong chương trình đào tạo thạc sĩ tại VinUni, điểm đánh giá học phần từ mức nào trở lên thì được xếp loại đạt?",
+    "expected_answer": "Kết quả học phần chỉ được xếp loại đạt khi điểm đánh giá đạt từ mức C (tương đương 2.0 trên thang điểm 4) trở lên; các mức điểm từ C- trở xuống (1.7, 1.3, 1.0, 0.7, 0.0) bị coi là không đạt.",
+    "expected_context": "Kết quả các học phần trong chương trình đào tạo chỉ được xếp loại đạt khi có điểm đánh giá từ mức C trở lên. Học viên có điểm học phần không đạt phải đăng ký học lại và thi theo quy định hiện hành. Phân loại đạt: A (4.0), A- (3.7), B+ (3.3), B (3.0), B- (2.7), C+ (2.3), C (2.0); Loại không đạt: C- (1.7), D+ (1.3), D (1.0), D- (0.7), F (0.0)."
+  },
+  {
+    "question": "Thời gian đào tạo tiêu chuẩn của trình độ tiến sĩ tại VinUni là bao nhiêu năm đối với người có bằng thạc sĩ và người có bằng cử nhân?",
+    "expected_answer": "Thời gian đào tạo tiêu chuẩn là từ 03 năm (36 tháng) đối với nghiên cứu sinh có bằng thạc sĩ và từ 04 năm (48 tháng) đối với nghiên cứu sinh có bằng đại học chính quy.",
+    "expected_context": "Thời gian đào tạo tiêu chuẩn của trình độ tiến sĩ từ 03 năm (36 tháng) đối với nghiên cứu sinh có bằng thạc sĩ đến 04 năm (48 tháng) đối với nghiên cứu sinh đã tốt nghiệp đại học, không qua đào tạo thạc sĩ."
+  },
+  {
+    "question": "Người hướng dẫn nghiên cứu sinh tiến sĩ tại VinUni cần đáp ứng tiêu chuẩn nghiên cứu khoa học như thế nào trong 5 năm gần nhất?",
+    "expected_answer": "Trong 05 năm gần nhất, người hướng dẫn phải là tác giả chính của các công bố thuộc danh mục WoS/Scopus, sách chuyên khảo hoặc bằng sáng chế với tổng điểm tối thiểu từ 4.0 điểm trở lên theo khung điểm Hội đồng Giáo sư nhà nước.",
+    "expected_context": "Trong thời gian 05 năm (60 tháng) tính đến thời điểm có quyết định công nhận hướng dẫn nghiên cứu sinh... các công bố phải đạt tổng điểm từ 4,0 điểm trở lên tính theo điểm tối đa do Hội đồng Giáo sư nhà nước quy định cho mỗi loại công trình... hoặc là tác giả của ít nhất 01 kết quả nghiên cứu, sáng chế."
+  }
+]
